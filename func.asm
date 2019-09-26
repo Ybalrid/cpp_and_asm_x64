@@ -32,8 +32,8 @@ mov rax, rcx
 add rax, rdx
 add rax, r8
 add rax, r9
-add rax, [rsp + 40]
-add rax, [rsp + 48]
+add rax, QWORD PTR [rsp + 40]
+add rax, QWORD PTR [rsp + 48]
 ret
 sum_6_ints ENDP
 
@@ -44,7 +44,5 @@ increment_pointer_int PROC
 add DWORD PTR [rcx], 1		;DWORD PTR [address] means that we are accessing a 32bit value
 ret
 increment_pointer_int ENDP
-
-
 
 END
