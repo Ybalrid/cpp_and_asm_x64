@@ -9,6 +9,8 @@ extern "C" int sum_4_ints(int, int, int, int); // this is a prototype, the argum
 extern "C" int  sum_6_ints(int, int, int, int, int, int);
 extern "C" void increment_pointer_int(int*);
 
+extern "C" void swap(int*, int*);
+
 // The calling conventions are pretty much set in stone for x64, and correspond
 // to "put 4 first args in registers, the rest on the stack" See the assembly
 // file comments for info about how to access these args
@@ -22,5 +24,11 @@ int main()
   int my_int = 0;
   increment_pointer_int(&my_int);
   printf("1 = %d\n", my_int);
+
+  int a = 1, b = 2;
+
+  printf("before swap %d %d\n", a, b);
+  swap(&a, &b);
+  printf("after swap %d %d\n", a, b);
   return 0;
 }

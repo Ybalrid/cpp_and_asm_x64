@@ -45,4 +45,22 @@ add DWORD PTR [rcx], 1		;DWORD PTR [address] means that we are accessing a 32bit
 ret
 increment_pointer_int ENDP
 
+
+;the following procedure allocate local variables on the stack
+;this is not the most efficient way to do so here. This is for
+;illustration only
+swap PROC
+push rsp
+sub rsp, 4 ;We only have *one* variable, in general we would have one regiser acting as a base pointer
+mov eax, DWORD PTR[rcx]
+mov DWORD PTR[rsp], eax
+mov eax, DWORD PTR[rdx]
+mov DWORD PTR[rcx], eax
+mov eax, DWORD PTR[rsp]
+mov DWORD PTR[rdx], eax
+add rsp, 4
+pop rsp
+ret
+swap ENDP
+
 END
