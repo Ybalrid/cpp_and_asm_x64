@@ -4,4 +4,4 @@ project (cpp_and_asm)
 
 enable_language(ASM_MASM)
 
-add_executable(cpp_and_asm main.cpp func.asm)
+add_executable(cpp_and_asm main.cpp func.asm.hpp func.asm README.md)
