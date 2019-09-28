@@ -1,4 +1,4 @@
-;See top of main.cpp for "how to call these functions" from C++ code
+;See func.asm.hpp and main.cpp for "how to call these functions" from C++ code
 .CODE
 
 ;This is just a function that return the number 42
